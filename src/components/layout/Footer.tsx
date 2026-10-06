@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
             className="text-gray-500 hover:text-gray-300 transition-colors"
             aria-label="GitHub profile"
           >
-            <Github size={18} />
+            <GithubIcon size={18} />
           </a>
           <a
             href="https://linkedin.com/in/issaka-sa-ad-timbilla"
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             className="text-gray-500 hover:text-gray-300 transition-colors"
             aria-label="LinkedIn profile"
           >
-            <Linkedin size={18} />
+            <LinkedinIcon size={18} />
           </a>
         </div>
       </div>

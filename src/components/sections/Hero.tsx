@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Github, Linkedin, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons';
 import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
@@ -73,7 +74,7 @@ export const Hero: React.FC = () => {
                 className="text-gray-500 hover:text-gray-300 transition-colors p-1"
                 aria-label="GitHub profile"
               >
-                <Github size={20} />
+                <GithubIcon size={20} />
               </a>
               <a
                 href="https://linkedin.com/in/issaka-sa-ad-timbilla"
@@ -82,7 +83,7 @@ export const Hero: React.FC = () => {
                 className="text-gray-500 hover:text-gray-300 transition-colors p-1"
                 aria-label="LinkedIn profile"
               >
-                <Linkedin size={20} />
+                <LinkedinIcon size={20} />
               </a>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Certification } from '../types';
+import type { Certification } from '../types';
 
 // Add certifications here as you earn them.
 // Each entry will appear as a card in the Certifications section.

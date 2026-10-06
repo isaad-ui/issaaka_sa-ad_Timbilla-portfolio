@@ -1,4 +1,4 @@
-import { JourneyItem } from '../types';
+import type { JourneyItem } from '../types';
 
 export const journeyItems: JourneyItem[] = [
   {

@@ -1,4 +1,4 @@
-import { RepoCard } from '../types';
+import type { RepoCard } from '../types';
 
 // Static repo cards — matches the main projects.
 // To add live GitHub API data later:
