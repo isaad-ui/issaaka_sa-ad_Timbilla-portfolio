@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
               className={`text-xl sm:text-2xl font-semibold text-neutral-600 mb-4 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{ transitionDelay: '160ms' }}
             >
-              Software Engineer &amp; Data Science Enthusiast
+              Python Developer &amp; AI Enthusiast
             </p>
 
             {/* Bio */}
@@ -78,9 +78,9 @@ export const Hero: React.FC = () => {
               className={`text-neutral-500 text-lg leading-relaxed mb-8 max-w-xl transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{ transitionDelay: '240ms' }}
             >
-              I build practical software — from full-stack web applications to Python data tools.
-              Currently studying Computer Science at the University of Ghana while sharpening my
-              skills across software engineering and data science.
+              I build practical software with Python — from data analysis tools to AI-driven projects.
+              Currently studying Computer Science at the University of Ghana and diving deep into
+              Python development and artificial intelligence.
             </p>
 
             {/* Meta */}

@@ -1,12 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { BookOpen, Code2, FlaskConical, Lightbulb } from 'lucide-react';
+import { BookOpen, Code2, Brain, Lightbulb } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
-
-const stats = [
-  { label: 'Projects Built', value: '5+' },
-  { label: 'Languages', value: '5+' },
-  { label: 'Year Started', value: '2024' },
-];
 
 const highlights = [
   {
@@ -16,13 +10,13 @@ const highlights = [
   },
   {
     icon: Code2,
-    title: 'Software Engineering',
-    text: 'Building full-stack and frontend applications with Python, JavaScript, and modern web technologies. Focused on clean, practical software.',
+    title: 'Python Development',
+    text: 'Python is my primary language. I use it to build data tools, automate workflows, implement algorithms, and explore AI applications.',
   },
   {
-    icon: FlaskConical,
-    title: 'Data Science Track',
-    text: 'Exploring data analysis, machine learning fundamentals, and the pipeline from raw data to actionable insight with Python.',
+    icon: Brain,
+    title: 'AI Enthusiast',
+    text: 'Passionate about artificial intelligence and machine learning — exploring how intelligent systems work and how to build them with Python.',
   },
   {
     icon: Lightbulb,
@@ -53,7 +47,7 @@ export const About: React.FC = () => {
           <SectionHeader
             label="About"
             title="A bit about me"
-            subtitle="Computer Science student at the University of Ghana, building practical software and exploring data science."
+            subtitle="Computer Science student at the University of Ghana, building with Python and exploring artificial intelligence."
           />
         </div>
 
@@ -64,34 +58,21 @@ export const About: React.FC = () => {
           >
             <p className="text-neutral-600 leading-relaxed">
               I'm Issaka Sa-ad Timbilla, a Computer Science student at the University of Ghana
-              (expected graduation: 2028). My focus sits at the intersection of software
-              engineering and data science — I want to build things that work well and understand
-              the data that flows through them.
+              (expected graduation: 2028). Python is my primary language — I use it for everything
+              from building data tools and implementing algorithms to exploring AI and machine
+              learning concepts.
             </p>
             <p className="text-neutral-600 leading-relaxed">
-              I started with Python and worked my way through data structures, algorithms, and web
-              development. Over the past year I've built full-stack applications, frontend UIs,
-              and a collection of Python projects covering core CS concepts. Everything I've built
-              is on GitHub.
+              I'm drawn to artificial intelligence and what becomes possible when you combine
+              strong Python fundamentals with real data. My projects reflect that — working with
+              APIs, analysing data, and building things that demonstrate what I'm learning in
+              practice.
             </p>
             <p className="text-neutral-600 leading-relaxed">
-              Right now I'm working on strengthening my skills across the full stack while
-              deepening my understanding of data science concepts. I'm looking for internship
-              opportunities where I can contribute to real work and keep growing as an engineer.
+              Right now I'm focused on deepening my Python skills and AI knowledge while building
+              projects that matter. I'm looking for opportunities where I can contribute, learn
+              from experienced engineers, and keep growing.
             </p>
-
-            <div className="grid grid-cols-3 gap-3 pt-4">
-              {stats.map((s, i) => (
-                <div
-                  key={s.label}
-                  className={`bg-white border border-neutral-200 rounded-xl p-4 shadow-sm transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${200 + i * 80}ms` }}
-                >
-                  <div className="text-2xl font-bold text-neutral-900 mb-1">{s.value}</div>
-                  <div className="text-xs text-neutral-400 font-medium">{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right: highlight cards */}
