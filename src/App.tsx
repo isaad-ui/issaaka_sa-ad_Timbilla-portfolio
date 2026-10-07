@@ -5,8 +5,6 @@ import { About } from './components/sections/About';
 import { Skills } from './components/sections/Skills';
 import { Projects } from './components/sections/Projects';
 import { Journey } from './components/sections/Journey';
-import { Certifications } from './components/sections/Certifications';
-import { GitHub } from './components/sections/GitHub';
 import { Contact } from './components/sections/Contact';
 
 function App() {
@@ -19,8 +17,6 @@ function App() {
         <Skills />
         <Projects />
         <Journey />
-        <Certifications />
-        <GitHub />
         <Contact />
       </main>
       <Footer />

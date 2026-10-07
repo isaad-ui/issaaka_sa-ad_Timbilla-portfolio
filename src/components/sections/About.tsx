@@ -5,7 +5,6 @@ import { SectionHeader } from '../ui/SectionHeader';
 const stats = [
   { label: 'Projects Built', value: '5+' },
   { label: 'Languages', value: '5+' },
-  { label: 'Focus Areas', value: '2' },
   { label: 'Year Started', value: '2024' },
 ];
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -18,7 +18,6 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
       const sections = navLinks.map((l) => l.href.slice(1));
       let current = 'home';
       for (const id of sections) {
@@ -29,21 +28,9 @@ export const Navbar: React.FC = () => {
       }
       setActive(current);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleDownloadCV = () => {
-    // Place your resume PDF at /public/resume.pdf to enable download
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Issaka-Sa-ad-Timbilla-CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    // If the file doesn't exist, the browser will show a 404 — replace /public/resume.pdf with your actual file
-  };
 
   return (
     <header
@@ -83,17 +70,8 @@ export const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        {/* CV button + mobile toggle */}
+        {/* Mobile toggle */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={handleDownloadCV}
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-300 border border-[#2a2a2a] rounded-lg hover:border-indigo-500/50 hover:text-indigo-400 transition-all"
-            aria-label="Download CV"
-          >
-            <Download size={14} />
-            CV
-          </button>
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-gray-400 hover:text-gray-200 transition-colors"
@@ -124,15 +102,6 @@ export const Navbar: React.FC = () => {
                 </a>
               </li>
             ))}
-            <li className="pt-2 border-t border-[#1a1a1a] mt-2">
-              <button
-                onClick={() => { handleDownloadCV(); setIsOpen(false); }}
-                className="flex items-center gap-2 px-3 py-2.5 text-sm text-gray-400 hover:text-gray-200 transition-colors"
-              >
-                <Download size={14} />
-                Download CV
-              </button>
-            </li>
           </ul>
         </div>
       )}
