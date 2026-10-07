@@ -3,15 +3,11 @@ import { ArrowDown, MapPin, GraduationCap, User } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons';
 import { Button } from '../ui/Button';
 
-// ── To add your photo:
-//    1. Drop your image file into public/  (e.g. public/profile.jpg)
-//    2. Change PHOTO_SRC below to '/profile.jpg' (or whatever filename you used)
-//    3. Save — the placeholder avatar disappears and your photo shows instead.
-const PHOTO_SRC = ''; // e.g. '/profile.jpg'
+// ── To add your photo: drop your image into public/ and set the path below.
+const PHOTO_SRC = '/profile.jpg';
 
 export const Hero: React.FC = () => {
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
     return () => clearTimeout(t);
