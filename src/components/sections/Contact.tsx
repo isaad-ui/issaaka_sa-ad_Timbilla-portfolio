@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
   };
 
   const contactLinks: { icon: IconComponent; label: string; value: string; href: string }[] = [
-    { icon: Mail as IconComponent, label: 'Email', value: 'isaad@example.com', href: 'mailto:isaad@example.com' },
+    { icon: Mail as IconComponent, label: 'Email', value: 'issakasaad123@gmail.com', href: 'mailto:issakasaad123@gmail.com' },
     { icon: LinkedinIcon, label: 'LinkedIn', value: 'issaka-sa-ad-timbilla', href: 'https://linkedin.com/in/issaka-sa-ad-timbilla' },
     { icon: GithubIcon, label: 'GitHub', value: 'isaad-ui', href: 'https://github.com/isaad-ui' },
   ];
