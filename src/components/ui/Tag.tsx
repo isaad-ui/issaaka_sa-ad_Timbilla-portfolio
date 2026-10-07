@@ -8,11 +8,12 @@ interface TagProps {
 
 export const Tag: React.FC<TagProps> = ({ children, variant = 'default', className = '' }) => {
   const variants = {
-    default: 'bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 text-xs px-2.5 py-1 rounded-md',
+    default:
+      'bg-neutral-100 border border-neutral-200 text-neutral-600 text-xs px-2.5 py-1 rounded-md font-medium',
     learning:
-      'bg-transparent border border-[#404040] text-gray-500 text-xs px-2.5 py-1 rounded-md',
+      'bg-white border border-dashed border-neutral-300 text-neutral-400 text-xs px-2.5 py-1 rounded-md font-medium',
     category:
-      'bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs px-2.5 py-1 rounded-md font-medium',
+      'bg-indigo-50 border border-indigo-200 text-indigo-600 text-xs px-2.5 py-1 rounded-md font-semibold',
   };
 
   return <span className={`inline-block ${variants[variant]} ${className}`}>{children}</span>;

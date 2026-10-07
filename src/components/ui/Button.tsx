@@ -28,15 +28,15 @@ export const Button: React.FC<ButtonProps> = ({
   'aria-label': ariaLabel,
 }) => {
   const base =
-    'inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]';
+    'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f5f5]';
 
   const variants = {
     primary:
-      'bg-indigo-600 text-white hover:bg-indigo-500 active:bg-indigo-700 disabled:bg-indigo-600/40 disabled:cursor-not-allowed',
+      'bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 shadow-sm hover:shadow-md disabled:bg-indigo-300 disabled:cursor-not-allowed',
     outline:
-      'border border-[#404040] text-gray-200 hover:border-indigo-500 hover:text-indigo-400 active:bg-indigo-500/10 disabled:opacity-40 disabled:cursor-not-allowed',
+      'border border-neutral-300 text-neutral-700 bg-white hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50 active:bg-indigo-100 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm',
     ghost:
-      'text-gray-400 hover:text-gray-200 hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed',
+      'text-neutral-500 hover:text-neutral-800 hover:bg-neutral-100 disabled:opacity-40 disabled:cursor-not-allowed',
   };
 
   const sizes = {
@@ -49,26 +49,14 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a
-        href={href}
-        target={target}
-        rel={rel}
-        className={classes}
-        aria-label={ariaLabel}
-      >
+      <a href={href} target={target} rel={rel} className={classes} aria-label={ariaLabel}>
         {children}
       </a>
     );
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={classes}
-      aria-label={ariaLabel}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={classes} aria-label={ariaLabel}>
       {children}
     </button>
   );

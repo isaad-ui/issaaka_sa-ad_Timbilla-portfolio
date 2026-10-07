@@ -17,23 +17,26 @@ export const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-24 border-t border-[#111111]">
-      <div
-        ref={ref}
-        className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-      >
-        <SectionHeader
-          label="Skills"
-          title="Technologies & Tools"
-          subtitle="A mix of proficient skills and technologies I'm actively learning."
-        />
+    <section id="skills" className="py-24 border-t border-neutral-200">
+      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+        <div
+          className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <SectionHeader
+            label="Skills"
+            title="Technologies &amp; Tools"
+            subtitle="A mix of proficient skills and technologies I'm actively learning."
+          />
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((cat) => (
-            <div key={cat.category} className="bg-[#111111] border border-[#1e1e1e] rounded-xl p-5">
-              <h3 className="text-gray-300 font-medium text-sm mb-4 pb-3 border-b border-[#1e1e1e]">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {skillCategories.map((cat, i) => (
+            <div
+              key={cat.category}
+              className={`bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <h3 className="text-neutral-800 font-semibold text-sm mb-4 pb-3 border-b border-neutral-100">
                 {cat.category}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -41,7 +44,7 @@ export const Skills: React.FC = () => {
                   <Tag key={skill.name} variant={skill.level === 'learning' ? 'learning' : 'default'}>
                     {skill.name}
                     {skill.level === 'learning' && (
-                      <span className="ml-1 text-gray-600">*</span>
+                      <span className="ml-1 text-neutral-300" aria-label="currently learning">*</span>
                     )}
                   </Tag>
                 ))}
@@ -50,7 +53,7 @@ export const Skills: React.FC = () => {
           ))}
         </div>
 
-        <p className="mt-6 text-xs text-gray-600">
+        <p className="mt-5 text-xs text-neutral-400">
           * Currently learning — included to show direction, not claimed as proficiency.
         </p>
       </div>

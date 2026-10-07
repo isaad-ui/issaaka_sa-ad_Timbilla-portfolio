@@ -33,46 +33,46 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-neutral-900/40 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Modal */}
-      <div className="relative bg-[#111111] border border-[#1e1e1e] rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto">
+      <div className="relative bg-white border border-neutral-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto animate-fade-up">
         {/* Header */}
-        <div className="sticky top-0 bg-[#111111] border-b border-[#1e1e1e] px-6 py-4 flex items-start justify-between gap-4 rounded-t-2xl">
+        <div className="sticky top-0 bg-white border-b border-neutral-100 px-6 py-4 flex items-start justify-between gap-4 rounded-t-2xl">
           <div>
             <Tag variant="category" className="mb-2">{project.category}</Tag>
-            <h2 className="text-xl font-semibold text-gray-100">{project.title}</h2>
+            <h2 className="text-xl font-bold text-neutral-900">{project.title}</h2>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-200 transition-colors p-1 mt-1 flex-shrink-0"
+            className="text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition-colors p-1.5 rounded-lg mt-1 flex-shrink-0"
             aria-label="Close modal"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
         </div>
 
         {/* Content */}
         <div className="px-6 py-6 space-y-6">
-          <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">The Problem</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{project.problem}</p>
-          </div>
+          {[
+            { label: 'The Problem', content: project.problem },
+            { label: 'The Solution', content: project.solution },
+          ].map(({ label, content }) => (
+            <div key={label}>
+              <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">{label}</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">{content}</p>
+            </div>
+          ))}
 
           <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">The Solution</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{project.solution}</p>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Key Features</h3>
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-3">Key Features</h3>
             <ul className="space-y-2">
               {project.features.map((f, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
-                  <span className="mt-2 w-1 h-1 rounded-full bg-indigo-400 flex-shrink-0" />
+                <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-600">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
                   {f}
                 </li>
               ))}
@@ -80,37 +80,35 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Tech Stack</h3>
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-3">Tech Stack</h3>
             <div className="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <Tag key={t}>{t}</Tag>
-              ))}
+              {project.tech.map((t) => <Tag key={t}>{t}</Tag>)}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Challenges</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{project.challenges}</p>
-          </div>
+          {[
+            { label: 'Challenges', content: project.challenges },
+            { label: 'What I Learned', content: project.learned },
+          ].map(({ label, content }) => (
+            <div key={label}>
+              <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">{label}</h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">{content}</p>
+            </div>
+          ))}
 
-          <div>
-            <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">What I Learned</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{project.learned}</p>
-          </div>
-
-          <div className="flex flex-wrap gap-3 pt-2 border-t border-[#1e1e1e]">
-            {project.githubUrl ? (
+          <div className="flex flex-wrap gap-3 pt-2 border-t border-neutral-100">
+            {project.githubUrl && (
               <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="outline">
                 <GithubIcon size={14} />
                 GitHub
               </Button>
-            ) : null}
-            {project.demoUrl ? (
+            )}
+            {project.demoUrl && (
               <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={14} />
                 Live Demo
               </Button>
-            ) : null}
+            )}
           </div>
         </div>
       </div>

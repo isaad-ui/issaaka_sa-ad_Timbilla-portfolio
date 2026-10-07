@@ -38,55 +38,57 @@ export const About: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="about" className="py-24 border-t border-[#111111]">
-      <div
-        ref={ref}
-        className={`max-w-6xl mx-auto px-6 transition-all duration-700 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-      >
-        <SectionHeader
-          label="About"
-          title="A bit about me"
-          subtitle="Computer Science student at the University of Ghana, building practical software and exploring data science."
-        />
+    <section id="about" className="py-24 border-t border-neutral-200">
+      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+        <div
+          className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <SectionHeader
+            label="About"
+            title="A bit about me"
+            subtitle="Computer Science student at the University of Ghana, building practical software and exploring data science."
+          />
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: bio */}
-          <div className="space-y-5">
-            <p className="text-gray-400 leading-relaxed">
+          <div
+            className={`space-y-5 transition-all duration-700 delay-100 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <p className="text-neutral-600 leading-relaxed">
               I'm Issaka Sa-ad Timbilla, a Computer Science student at the University of Ghana
               (expected graduation: 2028). My focus sits at the intersection of software
               engineering and data science — I want to build things that work well and understand
               the data that flows through them.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-neutral-600 leading-relaxed">
               I started with Python and worked my way through data structures, algorithms, and web
               development. Over the past year I've built full-stack applications, frontend UIs,
               and a collection of Python projects covering core CS concepts. Everything I've built
               is on GitHub.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-neutral-600 leading-relaxed">
               Right now I'm working on strengthening my skills across the full stack while
               deepening my understanding of data science concepts. I'm looking for internship
               opportunities where I can contribute to real work and keep growing as an engineer.
             </p>
 
-            <div className="grid grid-cols-2 gap-3 pt-4">
-              {stats.map((s) => (
+            <div className="grid grid-cols-3 gap-3 pt-4">
+              {stats.map((s, i) => (
                 <div
                   key={s.label}
-                  className="bg-[#111111] border border-[#1e1e1e] rounded-lg p-4"
+                  className={`bg-white border border-neutral-200 rounded-xl p-4 shadow-sm transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${200 + i * 80}ms` }}
                 >
-                  <div className="text-2xl font-semibold text-gray-100 mb-1">{s.value}</div>
-                  <div className="text-xs text-gray-500">{s.label}</div>
+                  <div className="text-2xl font-bold text-neutral-900 mb-1">{s.value}</div>
+                  <div className="text-xs text-neutral-400 font-medium">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -94,14 +96,17 @@ export const About: React.FC = () => {
 
           {/* Right: highlight cards */}
           <div className="grid sm:grid-cols-2 gap-4">
-            {highlights.map((h) => (
+            {highlights.map((h, i) => (
               <div
                 key={h.title}
-                className="bg-[#111111] border border-[#1e1e1e] rounded-xl p-5 hover:border-[#2a2a2a] transition-colors"
+                className={`bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${300 + i * 80}ms` }}
               >
-                <h.icon size={20} className="text-indigo-400 mb-3" />
-                <h3 className="text-gray-200 font-medium text-sm mb-2">{h.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{h.text}</p>
+                <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center mb-3">
+                  <h.icon size={16} className="text-indigo-600" />
+                </div>
+                <h3 className="text-neutral-800 font-semibold text-sm mb-2">{h.title}</h3>
+                <p className="text-neutral-500 text-sm leading-relaxed">{h.text}</p>
               </div>
             ))}
           </div>
