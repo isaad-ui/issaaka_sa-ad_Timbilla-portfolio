@@ -99,20 +99,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           <div className="flex flex-wrap gap-3 pt-2 border-t border-[#1e1e1e]">
-            <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="outline">
-              <GithubIcon size={14} />
-              GitHub
-            </Button>
+            {project.githubUrl ? (
+              <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="outline">
+                <GithubIcon size={14} />
+                GitHub
+              </Button>
+            ) : null}
             {project.demoUrl ? (
               <Button href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={14} />
                 Live Demo
               </Button>
-            ) : (
-              <Button disabled variant="ghost">
-                No Live Demo
-              </Button>
-            )}
+            ) : null}
           </div>
         </div>
       </div>

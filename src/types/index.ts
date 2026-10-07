@@ -1,7 +1,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Web App' | 'Frontend' | 'Python' | 'Full Stack';
+  category: 'Web App' | 'Frontend' | 'Python' | 'Full Stack' | 'Data Science';
   shortDescription: string;
   description: string;
   problem: string;
@@ -10,7 +10,7 @@ export interface Project {
   tech: string[];
   challenges: string;
   learned: string;
-  githubUrl: string;
+  githubUrl?: string;
   demoUrl?: string;
   status: 'complete' | 'in-development';
 }
