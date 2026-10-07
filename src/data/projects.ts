@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Working with paginated GitHub API responses and handling rate limiting required building robust request logic. Structuring raw JSON responses into a clean, analysable format — without losing useful fields — was the core data-engineering challenge.",
     learned:
       "Practical experience consuming a real-world REST API, handling authentication and rate limits, and applying data analysis techniques to developer data. This project made the full pipeline from raw API data to meaningful visualisation concrete.",
-    githubUrl: "https://github.com/isaad-ui",
+    githubUrl: "https://github.com/isaad-ui/github-developer-analytics",
     status: "complete",
   },
   {
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Getting the responsive grid to behave correctly across breakpoints — matching column behaviour on desktop, tablet, and mobile — required precise use of CSS Grid and careful attention to sizing and spacing. Replicating the sticky header and sidebar layout without JavaScript was a useful constraint.",
     learned:
       "Sharpened understanding of CSS Grid, Flexbox, and responsive layout techniques by working against a real, well-known reference. Recreating a production UI develops an eye for spacing, hierarchy, and the details that make interfaces feel polished.",
-    githubUrl: "https://github.com/isaad-ui",
+    githubUrl: "https://github.com/isaad-ui/youtubeClone",
     status: "complete",
   },
 ];
