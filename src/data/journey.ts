@@ -3,21 +3,21 @@ import type { JourneyItem } from '../types';
 export const journeyItems: JourneyItem[] = [
   {
     id: 'university',
-    year: '2024',
+    year: '2025',
     title: 'Started BSc Computer Science — University of Ghana',
     description: 'Enrolled in the BSc Computer Science programme at the University of Ghana, beginning a structured study of algorithms, programming, mathematics, and software systems.',
     tags: ['University', 'Computer Science', 'Academic'],
   },
   {
     id: 'python',
-    year: '2024',
+    year: '2025',
     title: 'Python Development & Algorithms',
     description: 'Built a strong foundation in Python programming, progressing from basics to object-oriented design, data structures, and algorithmic problem solving. Implemented linked lists, hash tables, sorting algorithms, and graph traversal from scratch.',
     tags: ['Python', 'Algorithms', 'Data Structures'],
   },
   {
     id: 'web-dev',
-    year: '2024',
+    year: '2025',
     title: 'Web Development Foundations',
     description: 'Learned HTML, CSS, and JavaScript through hands-on building. Moved beyond tutorials by working on real projects, focusing on responsive design, DOM manipulation, and building complete user interfaces.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Frontend'],
